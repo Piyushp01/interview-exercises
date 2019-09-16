@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Bar Graph Chart</title>
+  </head>
+  <link rel="stylesheet" type="text/css" href="theme.css" />
+  <body>
+    <ul class="chart"></ul>
+
+    <script type="text/javaScript">
+      function updateChart(myJson) {
+        if (Array.isArray(myJson.data)) {
+            myJson.data.map((value, key) => {
+              const title = key + 1;
+
+              // Dom Elements.
+              const listElement = document.createElement('li');
+              const span = document.createElement('span');
+              const chart = document.querySelector('ul.chart');
+
+              // Set Attribute.
+              span.setAttribute("style", `height:${value}%`);
+              span.setAttribute("title", `Item: ${title}`);
+              listElement.append(span);
+
+              chart.append(listElement);
+            });
+          }
+      }
+
+      fetch('https://raw.githubusercontent.com/Ganeshk01/sabre-test/master/UI-bar-graph/data.json')
+        .then(function(response) {
+          return response.json();
+        })
+        .then(updateChart);
+        
+    </script>
+  </body>
+</html>
