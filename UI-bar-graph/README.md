@@ -9,4 +9,4 @@
 ## Candidate Notes:
 You can open below page to see the bar graph and in network tab "data.json" is called.
 
-https://ganeshk01.github.io/sabre-test/UI-bar-graph/bar-chart.html
+https://piyushp01.github.io/interview-exercises/UI-bar-graph/UI-bar-graph.html
